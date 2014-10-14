@@ -1,0 +1,53 @@
+[33mcommit bf5fd8679372663b879eab3f16b6f2ff393fc6cc[m
+Author: Niels <nielsjhdr@gmail.com>
+Date:   Tue Oct 14 15:05:34 2014 +0200
+
+    Added Guardfile, updated title functionality for static pages
+
+[33mcommit 9e18354e4310555ba6d51a41cd89697efabddb2e[m
+Author: Niels <nielsjhdr@gmail.com>
+Date:   Tue Oct 14 14:40:29 2014 +0200
+
+    Added red/green functionality for testing
+
+[33mcommit b54a80cb10d841cb6fb419b723014377a1696ff2[m
+Author: Niels <nielsjhdr@gmail.com>
+Date:   Tue Oct 14 14:01:46 2014 +0200
+
+    Finish static pages
+
+[33mcommit ffd711f78dca9b61eefca485a79d32dc1882ede8[m
+Author: Niels <nielsjhdr@gmail.com>
+Date:   Tue Oct 14 13:58:04 2014 +0200
+
+    Removed hello from ApplicationController
+
+[33mcommit fe12232b68ee670e4cbbf037c5566d2c09ba29db[m
+Author: Niels <nielsjhdr@gmail.com>
+Date:   Tue Oct 14 13:56:30 2014 +0200
+
+    Added tests, added about page and added titles to pages.
+
+[33mcommit b3f23202ebd95ff568e0c2193069b463a848a85e[m
+Author: Niels <nielsjhdr@gmail.com>
+Date:   Tue Oct 14 13:25:17 2014 +0200
+
+    Add a Static Pages controller
+
+[33mcommit 4b868f082a787deefd9d03d0623abf5103b6dea9[m
+Author: Niels <nielsjhdr@gmail.com>
+Date:   Tue Oct 14 13:18:32 2014 +0200
+
+    Add hello
+
+[33mcommit 8fea4b03676349f8bb214bad9dc9a6de0f0b4f4b[m
+Author: Niels <nielsjhdr@gmail.com>
+Date:   Tue Oct 14 13:13:36 2014 +0200
+
+    Improve the README
+
+[33mcommit cdc5fb2cf7fdb9abea87bf3406b902cc5e2a3383[m
+Author: Niels <nielsjhdr@gmail.com>
+Date:   Tue Oct 14 13:10:11 2014 +0200
+
+    Initial commit
