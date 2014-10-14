@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get '/help' => 'static_pages#help'
+  get '/help' => 'static_pages#help'   
   get '/about' => 'static_pages#about'
   get '/contact' => 'static_pages#contact'
 
+  # the above method creates for example the following variables that can be used in HTML:
+  #     help_path -> '/help'
+  #     help_url  -> 'http://www.example.com/help'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-  
-
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
