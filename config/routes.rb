@@ -4,10 +4,31 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'signup' => 'users#new'
+  resources :users
 
-  # the above method creates for example the following variables that can be used in HTML:
+  # the get method creates for example the following variables that can be used in HTML:
   #     help_path -> '/help'
   #     help_url  -> 'http://www.example.com/help'
+
+
+  # --- the resources :users method creates the following automatically: ---#
+  
+  # HTTP    request URL     Action    Named route           Purpose
+
+  # GET     /users          index     users_path            page to list all users
+  # GET     /users/1        show      user_path(user)       page to show user
+  # GET     /users/new      new       new_user_path         page to make a new user (signup)
+  # POST    /users          create    users_path            create a new user
+  # GET     /users/1/edit   edit      edit_user_path(user)  page to edit user with id 1
+  # PATCH   /users/1        update    user_path(user)       update user
+  # DELETE  /users/1        destroy   user_path(user)       delete user
+
+
+
+
+
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
