@@ -1,10 +1,22 @@
 Rails.application.routes.draw do
-  root 'static_pages#home'
-  get 'help' => 'static_pages#help'   
-  get 'about' => 'static_pages#about'
-  get 'contact' => 'static_pages#contact'
-  get 'signup' => 'users#new'
+
+  root   'static_pages#home'
+
+  # Main pages
+  get    'help'     => 'static_pages#help'   
+  get    'about'    => 'static_pages#about'
+  get    'contact'  => 'static_pages#contact'
+
+  # Signup page/form for new user
+  get    'signup'   => 'users#new'
   resources :users
+
+  # Login page 
+  get    'login'    => 'sessions#new'
+  post   'login'    => 'sessions#create'
+  delete 'logout'   => 'sessions#destroy'
+
+
 
   # the get method creates for example the following variables that can be used in HTML:
   #     help_path -> '/help'
