@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root   'static_pages#home'
 
   # Main pages
@@ -9,12 +14,16 @@ Rails.application.routes.draw do
 
   # Signup page/form for new user
   get    'signup'   => 'users#new'
-  resources :users
+  
 
   # Login page 
   get    'login'    => 'sessions#new'
   post   'login'    => 'sessions#create'
   delete 'logout'   => 'sessions#destroy'
+
+  resources :users
+  resources :account_activations, only: [:edit]
+  resources :password_resets,     only: [:new, :create, :edit, :update]
 
 
 
@@ -34,6 +43,9 @@ Rails.application.routes.draw do
   # GET     /users/1/edit   edit      edit_user_path(user)  page to edit user with id 1
   # PATCH   /users/1        update    user_path(user)       update user
   # DELETE  /users/1        destroy   user_path(user)       delete user
+
+
+  # GET     /account_activation/<token>/edit edit edit_account_activation_url
 
 
 
