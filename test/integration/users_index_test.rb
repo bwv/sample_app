@@ -28,4 +28,20 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     assert_select 'a', text: 'delete', count: 0
   end
 
+  test "index only shows activated users" do
+    @non_admin.update_attribute(:activated, false) # Sterling Archer 
+    log_in_as(@admin)
+    get users_path
+    assert_match "Michael Example", response.body
+    assert_no_match "Sterling Archer", response.body
+  end
+
+  test "unactivated user page redirects to root" do 
+    @non_admin.update_attribute(:activated, false) # Sterling Archer
+    get user_path(@non_admin)
+    assert_redirected_to root_url
+    get user_path(@admin)
+    assert_template 'users/show'
+  end
+
 end

@@ -5,10 +5,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    redirect_to root_url and return unless @user.activated?
   end
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page])
   end
 
   def new
@@ -60,7 +61,7 @@ class UsersController < ApplicationController
       redirect_to(root_url) unless current_user.admin?
     end
 
-    # Confirms a logged-in user
+    # Confirms a logged-in user >>> triggered by before_action 
     def logged_in_user
       unless logged_in?
         store_location
