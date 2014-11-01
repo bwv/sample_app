@@ -1,0 +1,7 @@
+<% if @feed_items.any? %>
+	<ol class="microposts">
+		<%= render @feed_items %> 
+		<!-- this automatically goes to app/views/micropost because @feed_items have a class of 			Micropost -->
+	</ol>
+	<%= will_paginate @feed_items %>
+<% end %>

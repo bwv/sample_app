@@ -23,7 +23,7 @@ module SessionsHelper
     cookies.delete(:remember_token)
   end
 
-  # Logs out the given user 
+  # Logs out the given user - deleting the session and cookies
   def log_out
     forget(current_user)
     session.delete(:user_id)
@@ -41,7 +41,9 @@ module SessionsHelper
   end
 
   # Returns the current logged-in user (if any)
-  # Used in _header.html:  link_to "Profile", current_user
+  #   --- first checks session
+  #   --- then checks cookies
+  # <<< Used in _header.html:  link_to "Profile", current_user >>>
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)
