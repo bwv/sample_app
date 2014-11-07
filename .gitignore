@@ -17,3 +17,6 @@
 
 # Ignore spring/ directory so Guard works
 /spring/*.pid
+
+# Ignore uploaded test images
+/public/uploads
