@@ -1,0 +1,14 @@
+<%= form_for(current_user.active_relationships.
+						  build(followed_id: @user.id),
+						  remote: true) do |f| %> 
+	<div><%= hidden_field_tag :followed_id, @user.id %></div>
+	<%= f.submit "Follow", class: "btn btn-primary" %>
+<% end %>
+
+<!--  [ remote: true ] adds Ajax -->
+
+<!--  To what controller does this form go?
+
+	  What is passed in the form is an object of type active_relationships (.build returns the object), which belongs to the Relationship model. Therefore, it will look for a "relationships" route in the config/routes.rb, and sends it to the relationships_controller, which manages the #create and #destroy actions.
+		
+ -->

@@ -20,10 +20,17 @@ Rails.application.routes.draw do
   post   'login'    => 'sessions#create'
   delete 'logout'   => 'sessions#destroy'
 
+  resources :users do 
+    member do
+      get :following, :followers
+    end
+  end
+
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   resources :microposts,          only: [:create, :destroy]
+  resources :relationships,       only: [:create, :destroy]
 
 
 
@@ -36,6 +43,12 @@ Rails.application.routes.draw do
 
   #POST          /microposts     create    create a new micropost
   #DELETE        /microposts/1   destroy   delete micropost with id 1
+
+   # --- the resources :users with member nesting above creates the following: --- #
+  #HTTP request  URL                    Action     Named route
+
+  #GET           /users/1/following     following  following_user_path(1)
+  #GET           /users/1/followers     followers  followers_user_path(1)
 
 
   # --- the resources :users method creates the following automatically: ---#
